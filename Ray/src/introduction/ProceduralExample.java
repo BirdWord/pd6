@@ -8,7 +8,8 @@ package introduction;
  *
  */
 public class ProceduralExample {
-  public static void main(String[] args){
-    System.out.println("Hello world");
-  }
+	public static void main(String[] args){
+		String[] names = {"Jillian", "Joseph", "Jordan"};
+		System.out.println("My name is " + names[0] + ".");
+	}
 }
