@@ -11,6 +11,10 @@ public class ProceduralExample {
 	public static void main(String[] args){
 		String[] names = {"Jillian", "Joseph", "Jordan"};
 		String[] years = {"senior", "sophmore", "junior"};
-		System.out.println("My name is " + names[0] + " and I am a "+ years[0] + ".");
+		int i;
+		for(i = 0; i<years.length; i++)
+		{
+			System.out.println("My name is " + names[i] + " and I am a "+ years[i] + ".");
+		}
 	}
 }
