@@ -20,5 +20,7 @@ public class Mathing {
 		int m = 22;
 		int n = 7;
 		System.out.println("m/n is "+((double)m/n));
+		System.out.println("30".compareTo("2")>0);
+		
 	}
 }
