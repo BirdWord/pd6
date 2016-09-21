@@ -16,7 +16,7 @@ public class RandomTests {
 			result[rollUnfairDie()-1]++;
 		}
 		for(int x = 0; x < 6; x++){
-			System.out.println((x+1)+": "+(int)((double)result[x]/(times/100)));
+			System.out.println((x+1)+": "+(double)(((int)((double)result[x]/(times/1000))))/10);
 		}
 	}
 	public static int rollFairDie(){
