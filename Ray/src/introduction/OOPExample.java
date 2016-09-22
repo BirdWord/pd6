@@ -12,12 +12,15 @@ public class OOPExample {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Student petunia = new Student("Petunia");
+		/*Student petunia = new Student("Petunia");
 		Senior alex = new Senior("Alex", "human banana");
 		Junior meg = new Junior("Meg", true);
 		meg.conversate();
 		alex.talk();
-		petunia.talk();
+		petunia.talk();*/
+		Student bob = new Senior("Bob", "orange");
+		((Student)bob).talk();
+		bob.talk();
 	}
 
 }
