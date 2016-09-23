@@ -10,7 +10,6 @@ public class Raybot {
 	//static int lineCount;
 	public static void main(String[] args) {
 		createTopics();
-		//demonstrateStringMethods();
 		promptName();
 		talkForever();
 		//print(skipLines("Hi, this is going to be a really nice and wonderful string that wants to be torn to smithereens.", 
@@ -24,17 +23,6 @@ public class Raybot {
 	public static void print(String x){
 		//lineCount++;
 		System.out.println(x);
-	}
-	public static void demonstrateStringMethods(){
-		String text1 = new String("Hello world");
-		String text2 = "Hello world";
-		String text3 = "Hello"+" world";
-		System.out.println(text1.length());
-		System.out.println(text1.equals(text2));
-		System.out.println(text1.equals(text3));
-		String word = "aardvark";
-		String other = "supercalifragilisticexpialidocious";
-		System.out.println(word.compareTo(other));
 	}
 	public static void promptInput(){
 		print(user+", please input a string.");
@@ -51,8 +39,10 @@ public class Raybot {
 			response = getInput();
 			if(response.indexOf("good") >= 0)
 				print("I'm so happy you are good.");
-			else 
-				print("I'm sorry; I don't understand you.");
+			else if(response.indexOf("school") > 0){
+				inLoop = false;
+				School.talk();
+			}
 		}
 	}
 	public static void promptName(){
