@@ -1,22 +1,24 @@
+package chatbox;
 
-package stringstuff;
 import java.util.Scanner;
-public class StringPrac {
+public class Raybot {
+	static Topic school;
 	static Scanner scan;
 	static String user;
 	static boolean inLoop;
 	static String response;
 	//static int lineCount;
 	public static void main(String[] args) {
-		createScanner();
+		createTopics();
 		//demonstrateStringMethods();
 		promptName();
 		talkForever();
 		//print(skipLines("Hi, this is going to be a really nice and wonderful string that wants to be torn to smithereens.", 
 		//		30));
 	}
-	public static void createScanner() {
+	public static void createTopics() {
 		scan = new Scanner(System.in);
+		school = new School();
 		//lineCount = 0;
 	}
 	public static void print(String x){
