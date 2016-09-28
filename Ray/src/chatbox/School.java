@@ -14,5 +14,9 @@ public class School implements Topic {
 		}
 
 	}
+	public boolean isTriggered(String userInput) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

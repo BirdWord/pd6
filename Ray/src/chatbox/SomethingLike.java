@@ -26,4 +26,8 @@ public class SomethingLike implements Topic{
 			
 		}
 	}
+	public boolean isTriggered(String userInput) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
