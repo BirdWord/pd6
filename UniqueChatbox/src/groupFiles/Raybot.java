@@ -35,6 +35,7 @@ public class Raybot {
 			response = getInput();
 			if(findKeyword(response, "good", 0)>=0)
 				print("I'm so happy you are good.");
+			
 			//switch between chat boxes here
 		}
 	}
