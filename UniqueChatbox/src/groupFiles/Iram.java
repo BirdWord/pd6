@@ -1,6 +1,5 @@
 package groupFiles;
 
-import Raybot.Iram;
 public class Iram implements Topic{
 	public boolean isTriggered(String userInput) {
 		String[] triggers = {};
