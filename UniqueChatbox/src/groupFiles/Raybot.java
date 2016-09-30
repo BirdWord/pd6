@@ -17,7 +17,6 @@ public class Raybot {
 		//initialize group stuff
 	}
 	public static void print(String x){
-		//lineCount++;
 		System.out.println(x);
 	}
 	public static void promptInput(){
@@ -77,10 +76,10 @@ public class Raybot {
 		return true;
 	}
 	public static void promptName(){
-		print("Hi o-o");
-		print("da mihi factum, dabo tibi ius \n"+"data venia.");
+		print("Hi there.");
+		print("What's your name?");
 		user = scan.nextLine();
-		print("datum perficiemus munus");
+		print("Ok, fine.");
 		print("I'll call you "+user+".");
 	}
 	public static String skipLines(String x, int cutOff){
