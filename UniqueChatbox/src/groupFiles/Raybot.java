@@ -6,6 +6,9 @@ public class Raybot {
 	static String user;
 	static boolean inLoop;
 	static String response;
+	static Topic kristy;
+	static Topic ali;
+	static Topic iram;
 	//declare group classes
 	public static void main(String[] args) {
 		createTopics();
@@ -14,6 +17,9 @@ public class Raybot {
 	}
 	public static void createTopics() {
 		scan = new Scanner(System.in);
+		kristy = new KristyIsTriggered();
+		ali = new AliTrigger();
+		iram = new Iram();
 		//initialize group stuff
 	}
 	public static void print(String x){
