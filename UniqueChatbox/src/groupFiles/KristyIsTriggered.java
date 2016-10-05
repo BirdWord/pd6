@@ -3,55 +3,85 @@ package groupFiles;
 
 public class KristyIsTriggered implements Topic 
 {
-	private boolean inHelloLoop;
-	private String helloResponse;
-	private int helloCount;
-	private static String[] calmResponses = {"We have already said our hellos. Remember?", "Yes, hello to you too, let's actually talk"};
-	private static String[] angryResponses = {"okay, seriously. This has to stop","You are beginning to annoy me."+"WE'VE SAID HELLO"};
+	private int low;
+	private int high;
+	private static String[] winningStatement={"Yay, you have won", "You win!"};
+	private static String[] losingStatement = {"it's alright that you lost", "loser","You lost"};
+	private int answer;
+	private boolean gameTime;
+	private int counter;
 	
 	public void KristyHello()
 	{
-		helloCount = 0;
+		low = 0;
+		high = 100;
+		answer = (int)(Math.random()*high);
+		counter = 0;
 	}
 	public void talk()
 	{
-		inHelloLoop = true;
-		while(inHelloLoop)
+		gameTime = true;
+		while(gameTime)
 		{
-			helloCount++;
-			printResponse();
-			helloResponse = Raybot.getInput();
-			if (isTriggered(helloResponse))
+			counter++;
+			
+			int helloResponse = getIntegerInput();
+			printResponse(helloResponse);
+			if (giveUp())
 			{
-				inHelloLoop = false;
+				gameTime = false;
+				
+				int responseIndex = (int)(Math.random()*losingStatement.length);
+				Raybot.print(losingStatement[responseIndex]);
 				Raybot.talkForever();
 			}
 			
 		}
 	}
-	public void printResponse()
+	private static int getIntegerInput() {
+		 Raybot.print("Please enter an integer.");
+		 String integerString = Raybot.getInput();
+		 boolean isInteger = false;
+		 int value = 0;
+		 while(!isInteger){
+		 try{
+		 value = Integer.parseInt(integerString);
+		 //will not continue if an error above is thrown
+		 isInteger = true;//exits loop if entry is valid
+		 }catch(NumberFormatException e){
+		 Raybot.print("You must enter an integer. You better try again.");
+		 integerString = Raybot.getInput();
+		 }
+		 }
+		 return value;
+		 }
+	public void printResponse(int userInput)
 	{
 		int responseIndex = 0;
-		if (helloCount<5)
+		if (userInput == answer)
 		{
-			responseIndex = (int)(Math.random()*calmResponses.length);
-			Raybot.print(calmResponses[responseIndex]);
+			responseIndex = (int)(Math.random()*winningStatement.length);
+			Raybot.print(winningStatement[responseIndex]);
 			
 		}
-		else
+		else if(userInput >= high || userInput <= low)
 		{
-			responseIndex = (int)(Math.random()*angryResponses.length);
-			Raybot.print(angryResponses[responseIndex]);
+			Raybot.print("pick again");
+		}
+		else if (userInput >= answer)
+		{
+			high = userInput;
+			Raybot.print("please pick a number between" + low +"and"+ high);
+		}
+		else 
+		{
+			low = userInput;
+			Raybot.print("please pick a number between" + low +"and"+ high);
 		}
 	}
-	public boolean isTriggered (String userInput)
+	public boolean giveUp ()
 	{
-
-		if (Raybot.findKeyword(userInput, "bye", 0)>=0)
-		{
-			return true;
-		}
-		if (Raybot.findKeyword(userInput, "goodbye", 0)>=0)
+		if (counter== 6)
 		{
 			return true;
 		}
