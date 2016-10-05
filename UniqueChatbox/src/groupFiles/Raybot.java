@@ -36,7 +36,7 @@ public class Raybot {
 				"It is a pity that you have no shame.",
 				"You are just as pitiful as a grain of sand in the hourglass of eternity.",
 				"Has anything that has ever made sense come out of your mouth?"};
-		int angerLevel = 0;
+		int angerLevel = 0;//change anger level later
 		while(inLoop){
 			print("Greetings, "+user+". How are you?");
 			response = getInput();
