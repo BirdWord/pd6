@@ -6,6 +6,9 @@ public class Raybot {
 	static String user;
 	static boolean inLoop;
 	static String response;
+	static Topic kristy;
+	static Topic ali;
+	static Topic iram;
 	//declare group classes
 	public static void main(String[] args) {
 		createTopics();
@@ -14,6 +17,9 @@ public class Raybot {
 	}
 	public static void createTopics() {
 		scan = new Scanner(System.in);
+		Topic kristy = new KristyIsTriggered();
+		Topic ali = new AliTrigger();
+		Topic iram = new Iram();
 		//initialize group stuff
 	}
 	public static void print(String x){
@@ -22,18 +28,32 @@ public class Raybot {
 	public static void promptInput(){
 		print(user+", please input a string.");
 		String userInput = scan.nextLine();
-		print("Please input an integer.");
-		int number = scan.nextInt();
-		print("You typed "+userInput+".");
-		print("You typed "+number+".");
 	}
 	public static void talkForever(){
 		inLoop = true;
+		String[] userSpeech = new String[9001];
+		String[] hateComments = {"Don't test me child.",
+				"I don't think you are using the right hole for the right task.",
+				"It is a pity that you have no shame.",
+				"You are just as pitiful as a grain of sand in the hourglass of eternity.",
+				"Has anything that has ever made sense come out of your mouth?"};
+		int angerLevel = 0;
 		while(inLoop){
 			print("Greetings, "+user+". How are you?");
 			response = getInput();
-			if(findKeyword(response, "good", 0)>=0)
-				print("I'm so happy you are good.");
+			if(Arrays.asList(userSpeech).contains(response))
+				print(hateComments[(int)(Math.random()*hateComments.length)]);
+			else if(findKeyword(response, "good", 0)>=0){
+				print("Great...");
+			}
+			else if(findKeyword(response, "bored", 0)>=0){
+				print("Would you like to play a game?");
+				kristy.talk();
+			}
+			else if(findKeyword(response, "bored", 0)>=0){
+				print("That is my field of expertise.");
+				ali.talk();
+			}
 			
 			//switch between chat boxes here
 		}
