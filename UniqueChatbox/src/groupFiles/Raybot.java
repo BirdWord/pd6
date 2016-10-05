@@ -20,7 +20,6 @@ public class Raybot {
 		Topic kristy = new KristyIsTriggered();
 		Topic ali = new AliTrigger();
 		Topic iram = new Iram();
-		//initialize group stuff
 	}
 	public static void print(String x){
 		System.out.println(x);
@@ -96,10 +95,10 @@ public class Raybot {
 		return true;
 	}
 	public static void promptName(){
-		print("Hi there.");
-		print("What's your name?");
+		print("Hello there, student.");
+		print("I'd advise you tell me your name before you talk to me.");
 		user = scan.nextLine();
-		print("Ok, fine.");
+		print("Alright...");
 		print("I'll call you "+user+".");
 	}
 	public static String skipLines(String x, int cutOff){
