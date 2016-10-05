@@ -1,5 +1,5 @@
 package groupFiles;
-
+import java.util.*;
 
 public class KristyIsTriggered implements Topic 
 {
@@ -10,6 +10,7 @@ public class KristyIsTriggered implements Topic
 	private int answer;
 	private boolean gameTime;
 	private int counter;
+	private String[] triggerArray = {"bored", "game","play"};
 	
 	public void KristyHello()
 	{
@@ -84,6 +85,13 @@ public class KristyIsTriggered implements Topic
 		if (counter== 6)
 		{
 			return true;
+		}
+		return false;
+	}
+	public boolean isTriggered(String userinput){
+		for(String trigger: triggerArray){
+			if(Arrays.asList(triggerArray).contains(trigger))
+				return true;
 		}
 		return false;
 	}
