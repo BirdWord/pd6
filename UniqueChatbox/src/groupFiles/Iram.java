@@ -13,20 +13,20 @@ public class Iram implements Topic{
 			if(!checkPunc(input) && !checkCaps(input)){
 				System.out.println("Check your capitalization and your punctuation!");
 			}
-			if(!checkCaps(input)){
+			else if(!checkCaps(input)){
 				System.out.println("Check your capitalization.");
 			}
-			if(!checkPunc(input)){
+			else if(!checkPunc(input)){
 				System.out.println("Check your punctuation.");
 			}
-			if(!checkPunc(input) && checkCaps(input)){
+			else if(!checkPunc(input) && checkCaps(input)){
 				System.out.println("Your capitalization is correct but fix your punctuation.");
 			}
-			if(!checkCaps(input) && checkPunc(input)){
+			else if(!checkCaps(input) && checkPunc(input)){
 				System.out.println("Your punctuatuation is right but your capitalization is wrong.");
 			}
 			else{
-				System.out.println("Great grammer keep it up!");
+				System.out.println("Great grammar keep it up!");
 			}
 		}
 	}
