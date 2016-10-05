@@ -3,10 +3,14 @@ package groupFiles;
 import java.util.*;
 public class Iram implements Topic{
 	private boolean inLoop;
-	private String grammerResponse;
+	private String grammarResponse;
 
 	public void talk(){
-		System.out.println("Describe to me in a sentence why this is a cool program.");
+		String[] prompts = {"Describe to me in a sentence why this is a cool program.", "Describe to me in a sentence how your day was.", 
+				"Describe to me in a sentence what programming means to you.", 
+				"Describe to me in a sentence why food is neccessary for humans."};
+		int i = new Random().nextInt(prompts.length);
+		System.out.println(prompts[i]);
 		while(inLoop)
 		{
 			String input = Raybot.getInput();
