@@ -16,11 +16,8 @@ public class KristyIsTriggered implements Topic
 	{
 		low = 0;
 		high = 100;
-		answer = (int)(Math.random()*high);
-		while (answer = 0)
-		{
-			answer = (int)(Math.random()*high);
-		}
+		double roll = Math.random();//random double (0,1)
+ 		int answer = (int) (high * roll);
 		counter = 0;
 	}
 	public void talk()
