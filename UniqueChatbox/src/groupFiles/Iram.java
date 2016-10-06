@@ -2,7 +2,7 @@ package groupFiles;
 
 import java.util.*;
 public class Iram implements Topic{
-	private boolean inLoop;
+	private boolean iramInLoop;
 
 	public void talk(){
 		String[] prompts = {"Describe to me in a sentence why this is a cool program.", 
@@ -11,7 +11,8 @@ public class Iram implements Topic{
 				"Describe to me in a sentence why food is neccessary for humans."};
 		int i = new Random().nextInt(prompts.length);
 		System.out.println(prompts[i]);
-		while(inLoop)
+		iramInLoop = true;
+		while(iramInLoop)
 		{
 			String input = Raybot.getInput();
 			if(!checkPunc(input) && !checkCaps(input)){
@@ -34,12 +35,12 @@ public class Iram implements Topic{
 				String new1 = Raybot.getInput();
 				if (new1 == "yes")
 				{
-					inLoop = true;
+					iramInLoop = true;
 					
 				}
 				else
 				{
-					inLoop = false;
+					iramInLoop = false;
 					Raybot.talkForever();
 				}
 			}
