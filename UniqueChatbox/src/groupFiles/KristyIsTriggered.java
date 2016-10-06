@@ -16,9 +16,13 @@ public class KristyIsTriggered implements Topic
 	{
 		low = 0;
 		high = 100;
-		double roll = Math.random();//random double (0,1)
- 		int answer = (int) (high * roll)+1;
 		counter = 0;
+	}
+	public static int random()
+	{
+		double roll = Math.random();//random double (0,1)
+ 		int answer = (int) (high * roll);
+		return answer + 1;
 	}
 	public void talk()
 	{
@@ -28,7 +32,8 @@ public class KristyIsTriggered implements Topic
 			counter++;
 			
 			int helloResponse = getIntegerInput();
-			printResponse(helloResponse);
+			int rand = random();
+			printResponse(helloResponse, rand);
 			if (giveUp())
 			{
 				gameTime = false;
@@ -57,7 +62,7 @@ public class KristyIsTriggered implements Topic
 		 }
 		 return value;
 		 }
-	public void printResponse(int userInput)
+	public void printResponse(int userInput, int answer)
 	{
 		int responseIndex = 0;
 		if (userInput == answer)
