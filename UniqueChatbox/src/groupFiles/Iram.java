@@ -47,7 +47,7 @@ public class Iram implements Topic{
 		}
 	}
 	public static boolean checkPunc(String str){
-		char lstPsn = str.charAt(str.length());
+		char lstPsn = str.charAt(str.length()-1);
 		String[] punctuation = {"!",".","?"};
 		if(Arrays.asList(punctuation).contains(""+lstPsn)){
 			return true;
