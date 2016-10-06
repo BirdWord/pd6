@@ -17,6 +17,10 @@ public class KristyIsTriggered implements Topic
 		low = 0;
 		high = 100;
 		answer = (int)(Math.random()*high);
+		while (answer = 0)
+		{
+			answer = (int)(Math.random()*high);
+		}
 		counter = 0;
 	}
 	public void talk()
@@ -63,6 +67,8 @@ public class KristyIsTriggered implements Topic
 		{
 			responseIndex = (int)(Math.random()*winningStatement.length);
 			Raybot.print(winningStatement[responseIndex]);
+			gameTime = false;
+			Raybot.talkForever();
 			
 		}
 		else if(userInput >= high || userInput <= low)
