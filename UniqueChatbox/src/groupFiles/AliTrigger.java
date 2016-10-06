@@ -7,7 +7,7 @@ public class AliTrigger implements Topic
 	private int answer;
 	private boolean questionCycle;
 	private String userAnswer;
-	public void Talk()
+	public void talk()
 	{
 		Raybot.print("Do you wanna test your abilities in computer science?");
 		while(questionCycle)
@@ -61,9 +61,9 @@ public class AliTrigger implements Topic
 //	public String getResponse {
 //		
 //	}
-//	public boolean isTriggered(String userInput){
-//		return true;
-//	}
+	public boolean isTriggered(String userInput){
+		return true;
+	}
 //	public static void talk(){
 //	}
 //
