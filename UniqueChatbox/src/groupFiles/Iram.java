@@ -32,7 +32,7 @@ public class Iram implements Topic{
 			}
 			else{
 				System.out.println("Great grammar keep it up! Do you want to try again?");	
-				if(Raybot.getInput() == "no")
+				if(Raybot.getInput() = "no")
 				{
 					iramInLoop = false;
 					Raybot.talkForever();
