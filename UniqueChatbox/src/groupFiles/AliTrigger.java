@@ -62,7 +62,7 @@ public class AliTrigger implements Topic
 //		
 //	}
 	public boolean isTriggered(String userInput){
-		String[] triggers = {"grammar","punctuation"};
+		String[] triggers = {"testing","question","Ip"};
 		for(int i=0; i<triggers.length; i++)
 		{
 			if(Raybot.findKeyword(userInput, triggers[i], 0) >= 0){
