@@ -3,10 +3,10 @@ package groupFiles;
 import java.util.*;
 public class Iram implements Topic{
 	private boolean inLoop;
-	private String grammarResponse;
 
 	public void talk(){
-		String[] prompts = {"Describe to me in a sentence why this is a cool program.", "Describe to me in a sentence how your day was.", 
+		String[] prompts = {"Describe to me in a sentence why this is a cool program.", 
+				"Describe to me in a sentence how your day was.", 
 				"Describe to me in a sentence what programming means to you.", 
 				"Describe to me in a sentence why food is neccessary for humans."};
 		int i = new Random().nextInt(prompts.length);
@@ -30,14 +30,25 @@ public class Iram implements Topic{
 				System.out.println("Your punctuatuation is right but your capitalization is wrong.");
 			}
 			else{
-				System.out.println("Great grammar keep it up!");
+				System.out.println("Great grammar keep it up! Do you want to try again?");
+				String new1 = Raybot.getInput();
+				if (new1 == "yes")
+				{
+					inLoop = true;
+					
+				}
+				else
+				{
+					inLoop = false;
+					Raybot.talkForever();
+				}
 			}
 		}
 	}
 	public static boolean checkPunc(String str){
 		char lstPsn = str.charAt(str.length());
 		String[] punctuation = {"!",".","?"};
-		if(Raybot.getInput().contains(""+lstPsn)){
+		if(Arrays.asList(punctuation).contains(""+lstPsn)){
 			return true;
 		}
 		return false;
@@ -51,9 +62,12 @@ public class Iram implements Topic{
 	}
 
 	public boolean isTriggered(String userInput) {
-		String[] triggers = {"grammer","punctuation"};
-		if(Raybot.findKeyword(userInput, "", 0) >= 0){
-			return true;
+		String[] triggers = {"grammar","punctuation"};
+		for(int i=0; i<triggers.length; i++)
+		{
+			if(Raybot.findKeyword(userInput, triggers[i], 0) >= 0){
+				return true;
+			}
 		}
 		return false;
 	}
