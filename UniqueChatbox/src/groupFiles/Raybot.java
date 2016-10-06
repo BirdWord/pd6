@@ -36,25 +36,29 @@ public class Raybot {
 				"It is a pity that you have no shame.",
 				"You are just as pitiful as a grain of sand in the hourglass of eternity.",
 				"Has anything that has ever made sense come out of your mouth?"};
-		int angerLevel = 0;//change anger level later
 		while(inLoop){
 			print("Greetings, "+user+". How are you?");
+			int arrayCount = 0;
 			response = getInput();
-			if(Arrays.asList(userSpeech).contains(response))
+			userSpeech[arrayCount] = response;
+			arrayCount++;
+			if(Arrays.asList(userSpeech).contains(response)){
 				print(hateComments[(int)(Math.random()*hateComments.length)]);
-			else if(findKeyword(response, "good", 0)>=0){
+			}
+			else if(findKeyword(response, "good", 0)>=0 || findKeyword(response, "fine", 0)>=0 || findKeyword(response, "great", 0)>=0){
 				print("Great...");
+				print("");
 			}
 			else if(findKeyword(response, "bored", 0)>=0){
 				print("Would you like to play a game?");
+				inLoop = false;
 				kristy.talk();
 			}
 			else if(findKeyword(response, "bored", 0)>=0){
 				print("That is my field of expertise.");
+				inLoop = false;
 				ali.talk();
 			}
-			
-			//switch between chat boxes here
 		}
 	}
 	public static int findKeyword(String searchString, String key, int startIndex) {
