@@ -3,28 +3,20 @@ import java.util.*;
 
 public class KristyIsTriggered implements Topic 
 {
-	private int low;
-	private int high;
 	private static String[] winningStatement={"Yay, you have won", "You win!"};
 	private static String[] losingStatement = {"it's alright that you lost", "loser","You lost"};
 	private boolean gameTime;
-	private int counter;
 	private String[] triggerArray = {"bored", "game","play"};
 	
-	public void KristyHello()
-	{
-		low = 0;
-		high = 100;
-		counter = 0;
-	}
 	public static int random()
 	{
 		double roll = Math.random();//random double (0,1)
- 		int answer = (int) (high * roll);
+ 		int answer = (int) (100 * roll);
 		return answer + 1;
 	}
 	public void talk()
 	{
+		int counter = 0;
 		gameTime = true;
 		while(gameTime)
 		{
@@ -63,6 +55,8 @@ public class KristyIsTriggered implements Topic
 		 }
 	public void printResponse(int userInput, int answer)
 	{
+		int low = 0;
+		int high = 100;
 		int responseIndex = 0;
 		if (userInput == answer)
 		{
