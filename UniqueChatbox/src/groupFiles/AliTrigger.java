@@ -62,7 +62,14 @@ public class AliTrigger implements Topic
 //		
 //	}
 	public boolean isTriggered(String userInput){
-		return true;
+		String[] triggers = {"grammar","punctuation"};
+		for(int i=0; i<triggers.length; i++)
+		{
+			if(Raybot.findKeyword(userInput, triggers[i], 0) >= 0){
+				return true;
+			}
+		}
+		return false;
 	}
 //	public static void talk(){
 //	}
