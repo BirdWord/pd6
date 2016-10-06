@@ -7,7 +7,6 @@ public class KristyIsTriggered implements Topic
 	private int high;
 	private static String[] winningStatement={"Yay, you have won", "You win!"};
 	private static String[] losingStatement = {"it's alright that you lost", "loser","You lost"};
-	private int answer;
 	private boolean gameTime;
 	private int counter;
 	private String[] triggerArray = {"bored", "game","play"};
