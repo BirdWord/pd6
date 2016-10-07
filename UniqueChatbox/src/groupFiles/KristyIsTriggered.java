@@ -25,7 +25,7 @@ public class KristyIsTriggered implements Topic
 			int helloResponse = getIntegerInput();
 			int rand = random();
 			printResponse(helloResponse, rand);
-			if (giveUp())
+			if (giveUp(counter))
 			{
 				gameTime = false;
 				
@@ -81,9 +81,9 @@ public class KristyIsTriggered implements Topic
 			Raybot.print("please pick a number between" + low +"and"+ high);
 		}
 	}
-	public boolean giveUp ()
+	public boolean giveUp (int num)
 	{
-		if (counter== 6)
+		if (num== 6)
 		{
 			return true;
 		}
