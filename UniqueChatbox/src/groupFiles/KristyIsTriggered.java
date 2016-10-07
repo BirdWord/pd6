@@ -90,7 +90,7 @@ public class KristyIsTriggered implements Topic
 	{
 		if (num== 6)
 		{
-			Raybot.print("you have guessed it too many times               ");
+			Raybot.print("you have guessed it too many times");
 			return true;
 		}
 		return false;
