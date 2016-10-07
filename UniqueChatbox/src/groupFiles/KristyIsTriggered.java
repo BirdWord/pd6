@@ -7,7 +7,13 @@ public class KristyIsTriggered implements Topic
 	private static String[] losingStatement = {"it's alright that you lost", "loser","You lost"};
 	private boolean gameTime;
 	private String[] triggerArray = {"bored", "game","play"};
-	
+	private int low;
+	private int high;
+	public void variable()
+	{
+		low = 0;
+		high = 100;
+	}
 	public static int random()
 	{
 		double roll = Math.random();//random double (0,1)
@@ -17,6 +23,7 @@ public class KristyIsTriggered implements Topic
 	public void talk()
 	{
 		int counter = 0;
+		variable();
 		int rand = random();
 		Raybot.print("guess what number am I thinking about. Pick a number 1 to 100.");
 		gameTime = true;
@@ -55,8 +62,6 @@ public class KristyIsTriggered implements Topic
 		 }
 	public void printResponse(int userInput, int answer)
 	{
-		int low = 0;
-		int high = 100;
 		int responseIndex = 0;
 		if (userInput == answer)
 		{
