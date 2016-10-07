@@ -15,7 +15,7 @@ public class Iram implements Topic{
 		while(iramInLoop)
 		{
 			String input = Raybot.getInput();
-			if (input.equals("yes")) continue;
+			
 			if(!checkPunc(input) && !checkCaps(input)){
 				System.out.println("Check your capitalization and your punctuation!");
 			}
@@ -33,7 +33,7 @@ public class Iram implements Topic{
 			}
 			else{
 				System.out.println("Great grammar keep it up! Do you want to try again?");	
-				if(Raybot.findKeyword(input, "no", 0)>=0)
+				if (input.equals("yes")) continue;)
 				{
 					iramInLoop = false;
 					Raybot.talkForever();
