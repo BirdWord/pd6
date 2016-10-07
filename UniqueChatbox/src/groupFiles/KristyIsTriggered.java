@@ -25,7 +25,7 @@ public class KristyIsTriggered implements Topic
 		int counter = 0;
 		variable();
 		int rand = random();
-		Raybot.print("guess what number am I thinking about. Pick a number 1 to 100.");
+		Raybot.print("guess what number am I thinking about. Pick a number 1 to 100. Also you only get 6 tries!");
 		gameTime = true;
 		while(gameTime)
 		{
