@@ -84,15 +84,15 @@ public class Raybot {
 				inGreetLoop = false;
 				iram.talk();
 			}
-			else if(kristy.isTriggered(response)){
-				print("I believe it is time for a game...");
-				inGreetLoop = false;
-				kristy.talk();
-			}
 			else if(ali.isTriggered(response)){
 				print("Time for a quiz!");
 				inGreetLoop = false;
 				ali.talk();
+			}
+			else if(kristy.isTriggered(response)){
+				print("I believe it is time for a game...");
+				inGreetLoop = false;
+				kristy.talk();
 			}
 			userSpeech[arrayCount] = response;
 			arrayCount++;

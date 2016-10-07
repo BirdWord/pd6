@@ -31,7 +31,6 @@ public class KristyIsTriggered implements Topic
 		while(gameTime)
 		{
 			int helloResponse = getIntegerInput();
-			printResponse(helloResponse, rand);
 			if (giveUp(counter))
 			{
 				gameTime = false;
@@ -40,6 +39,7 @@ public class KristyIsTriggered implements Topic
 				Raybot.print(losingStatement[responseIndex]);
 				Raybot.talkForever();
 			}
+			printResponse(helloResponse, rand);
 			
 		}
 	}
