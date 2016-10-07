@@ -45,7 +45,7 @@ public class AliTrigger implements Topic
 				Raybot.print("Try again");
 			}
 		}
-		else
+		else if (2 == number)
 		{
 
 			if (userAnswer == answerKey[2])
