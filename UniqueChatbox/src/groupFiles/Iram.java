@@ -33,12 +33,12 @@ public class Iram implements Topic{
 			}
 			else{
 				System.out.println("Great grammar keep it up! Do you want to try again?");	
-				if (Raybot.findKeyword(input, "yes", 0)>=0)
+				if(input == "no")
 				{
-					iramInLoop = true;
+					iramInLoop = false;
+					Raybot.talkForever();
 				}
-				return false;
-				Raybot.talkForever();
+
 			}
 		}
 	}
