@@ -18,12 +18,12 @@ public class KristyIsTriggered implements Topic
 	{
 		int counter = 0;
 		gameTime = true;
+		int rand = random();
+		Raybot.print("PLease pick a number from 1 to 100.");
 		while(gameTime)
 		{
 			counter++;
-			
 			int helloResponse = getIntegerInput();
-			int rand = random();
 			printResponse(helloResponse, rand);
 			if (giveUp(counter))
 			{
@@ -37,7 +37,6 @@ public class KristyIsTriggered implements Topic
 		}
 	}
 	private static int getIntegerInput() {
-		 Raybot.print("Please enter an integer.");
 		 String integerString = Raybot.getInput();
 		 boolean isInteger = false;
 		 int value = 0;
