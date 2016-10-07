@@ -17,13 +17,12 @@ public class KristyIsTriggered implements Topic
 	public void talk()
 	{
 		int counter = 0;
+		int rand = random();
 		gameTime = true;
 		while(gameTime)
 		{
 			counter++;
-			
 			int helloResponse = getIntegerInput();
-			int rand = random();
 			printResponse(helloResponse, rand);
 			if (giveUp(counter))
 			{
