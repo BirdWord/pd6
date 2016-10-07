@@ -9,10 +9,12 @@ public class KristyIsTriggered implements Topic
 	private String[] triggerArray = {"bored", "game","play"};
 	private int low;
 	private int high;
+	private int counter; 
 	public void variable()
 	{
 		low = 0;
 		high = 100;
+		counter = 0;
 	}
 	public static int random()
 	{
@@ -22,7 +24,6 @@ public class KristyIsTriggered implements Topic
 	}
 	public void talk()
 	{
-		int counter = 0;
 		variable();
 		int rand = random();
 		Raybot.print("guess what number am I thinking about. Pick a number 1 to 100. Also you only get 6 tries!");
@@ -30,7 +31,6 @@ public class KristyIsTriggered implements Topic
 		while(gameTime)
 		{
 			int helloResponse = getIntegerInput();
-			counter++;
 			printResponse(helloResponse, rand);
 			if (giveUp(counter))
 			{
@@ -78,11 +78,13 @@ public class KristyIsTriggered implements Topic
 		else if (userInput >= answer)
 		{
 			high = userInput;
+			counter++;
 			Raybot.print("please pick a number between" + low +"and"+ high);
 		}
 		else 
 		{
 			low = userInput;
+			counter++;
 			Raybot.print("please pick a number between" + low +"and"+ high);
 		}
 	}
