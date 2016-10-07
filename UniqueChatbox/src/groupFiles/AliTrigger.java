@@ -85,7 +85,7 @@ public class AliTrigger implements Topic
 		}
 		return false;
 	}
-////	public static void talk(){
-////	}
-////
-//}
+//	public static void talk(){
+//	}
+//
+}

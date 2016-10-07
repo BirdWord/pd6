@@ -22,8 +22,8 @@ public class KristyIsTriggered implements Topic
 		gameTime = true;
 		while(gameTime)
 		{
-			counter++;
 			int helloResponse = getIntegerInput();
+			counter++;
 			printResponse(helloResponse, rand);
 			if (giveUp(counter))
 			{
