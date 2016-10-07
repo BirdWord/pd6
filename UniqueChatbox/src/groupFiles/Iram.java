@@ -38,8 +38,9 @@ public class Iram implements Topic{
 				else{
 					iramInLoop = false;
 				}
-				Raybot.talkForever();
+
 			}
+			Raybot.talkForever();
 		}
 	}
 	public static boolean checkPunc(String str){
