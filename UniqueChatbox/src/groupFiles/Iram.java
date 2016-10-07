@@ -9,11 +9,11 @@ public class Iram implements Topic{
 				"Describe to me in a sentence how your day was.", 
 				"Describe to me in a sentence what programming means to you.", 
 				"Describe to me in a sentence why food is neccessary for humans."};
-		int i = new Random().nextInt(prompts.length);
-		System.out.println(prompts[i]);
 		iramInLoop = true;
 		while(iramInLoop)
 		{
+			int i = new Random().nextInt(prompts.length);
+			System.out.println(prompts[i]);
 			String input = Raybot.getInput();
 			
 			if(!checkPunc(input) && !checkCaps(input)){
