@@ -34,7 +34,7 @@ public class Iram implements Topic{
 			else{
 				System.out.println("Great grammar keep it up! Do you want to try again?");	
 				input = Raybot.getInput();
-				if(input.equals("yes")continue;)
+				if(input.equals("yes"))continue;
 				else{
 					iramInLoop = false;
 				}
