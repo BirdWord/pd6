@@ -33,7 +33,7 @@ public class Iram implements Topic{
 			}
 			else{
 				System.out.println("Great grammar keep it up! Do you want to try again?");	
-				if (input.equals("yes")) continue;)
+				if (Raybot.findKeyword(input, "no", 0)>=0)
 				{
 					iramInLoop = false;
 					Raybot.talkForever();
