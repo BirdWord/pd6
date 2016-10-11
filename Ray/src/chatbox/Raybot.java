@@ -1,6 +1,7 @@
 package chatbox;
 
 import java.util.*;
+
 public class Raybot {
 	static Topic school;
 	static Scanner scan;
@@ -8,6 +9,7 @@ public class Raybot {
 	static boolean inLoop;
 	static String response;
 	static Topic like;
+	static Topic hello;
 	//static int lineCount;
 	public static void main(String[] args) {
 		createTopics();
@@ -20,6 +22,7 @@ public class Raybot {
 		scan = new Scanner(System.in);
 		school = new School();
 		like = new SomethingLike();
+		hello = new HelloHello();
 		//lineCount = 0;
 	}
 	public static void print(String x){
@@ -47,6 +50,10 @@ public class Raybot {
 			}
 			else if(findKeyword(response, "school", 0) > 0){
 				inLoop = false;
+			}
+			else if(findKeyword(response, "hello", 0)>=0){
+				inLoop = false;
+				chatbox.Topic.talk();
 			}
 		}
 	}
