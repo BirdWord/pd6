@@ -1,6 +1,6 @@
 package newarrays;
 
-public class Arraytesting {
+public class ArrayHelpers {
 	public static void main(String[] args){
 		//Populate and print an array with the numbers 1 - 50.
 		int[] array1 = new int[50];
