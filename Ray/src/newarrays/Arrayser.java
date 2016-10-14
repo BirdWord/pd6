@@ -4,24 +4,35 @@ public class Arrayser {
 
 	public static void main(String[] args) {
 		//Arrays, when born with the new keyword, start with the values of integer 0, double 0.0, boolean false and string null.
-		//long start = System.currentTimeMillis();
-		//arrayIntro();
-		//long end = System.currentTimeMillis();
+		long start = System.currentTimeMillis();
+		ArrayHelpers sample = new ArrayHelpers(10);
+		sample.increase();
+		System.out.println("The sample element has a number equal to "+sample.getNumber()+".");
+		long end = System.currentTimeMillis();
+		System.out.println((end-start)+"ms");
+		
+	}
+	private static void passByValue(){
 		//p("It took "+(end-start)+" millisecond(s).");
-		//String[] string1 = {"","",""};
-		///String[] string2 = new String[3];
-		//string2[0] = "";
-		//string2[1] = "";
-		//string2[2] = "";
-		//String[] string3 = new String[3];
-		//for(int i = 0; i<string3.length; i++){
-		//	string3[i] = "";}
-		String[] someStrings = new String[102];
-		populateArray(someStrings);
-		printArray(someStrings);
-		changeString(someStrings[100]);
-		changeString(someStrings, 100);
-		printArray(someStrings);
+			//String[] string1 = {"","",""};
+			///String[] string2 = new String[3];
+				//string2[0] = "";
+				//string2[1] = "";
+				//string2[2] = "";
+				//String[] string3 = new String[3];
+				//for(int i = 0; i<string3.length; i++){
+				//	string3[i] = "";}
+				String[] someStrings = new String[102];
+				populateArray(someStrings);
+				printArray(someStrings);
+				changeString(someStrings[100]);
+				changeString(someStrings, 100);
+				printArray(someStrings);
+				changeArrayElement(someStrings, 99);
+	}
+	private static void changeArrayElement(String[] someStrings, int i) {
+		someStrings[i] = "new item "+(i+1);
+		
 	}
 	private static void changeString(String string) {
 		string = "this has been changed";
