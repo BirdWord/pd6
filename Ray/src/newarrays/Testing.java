@@ -41,7 +41,7 @@ public class Testing {
 	private static int[] generateDiceRollArray(int rolls){
 		int[] rollArray = new int[rolls];
 		for(int i = 0; i<rolls; i++){
-			rollArray[i] = (int)(Math.random()*6)+1+(int)(Math.random()*6)+1;
+			rollArray[i] = (int)(Math.random()*6)+(int)(Math.random()*6)+2;
 		}
 		return rollArray;
 	}
