@@ -59,7 +59,7 @@ public class Testing {
 			results[num-2]++;
 		}
 		for(int i = 0; i<results.length; i++){
-			results[i] = results[i]/diceRolls.length;
+			results[i] = (results[i]/diceRolls.length)*100;
 		}
 		return results;
 	}
