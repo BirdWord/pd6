@@ -9,6 +9,7 @@ public class Testing {
 		int[] arr = {0,1,2,3,4};
 		swapItems(0, arr.length-1, arr);
 		printIntegerArray(arr);
+		printDoubleArray(checkDiceResults(generateDiceRollArray(100000)));
 	}
 	private static void printIntegerArray(int[] arr){
 		System.out.print(arr[0]);
@@ -18,6 +19,13 @@ public class Testing {
 		System.out.println();
 	}
 	private static void printStringArray(String[] arr){
+		System.out.print(arr[0]);
+		for(int i = 1; i<arr.length; i++){
+			System.out.print(", "+arr[i]);
+		}
+		System.out.println();
+	}
+	private static void printDoubleArray(double[] arr){
 		System.out.print(arr[0]);
 		for(int i = 1; i<arr.length; i++){
 			System.out.print(", "+arr[i]);
@@ -44,6 +52,16 @@ public class Testing {
 			rollArray[i] = (int)(Math.random()*6)+(int)(Math.random()*6)+2;
 		}
 		return rollArray;
+	}
+	private static double[] checkDiceResults(int[] diceRolls){
+		double[] results = new double[11];
+		for(int num: diceRolls){
+			results[num-2]++;
+		}
+		for(int i = 0; i<results.length; i++){
+			results[i] = results[i]/diceRolls.length;
+		}
+		return results;
 	}
 	private static String[] generateCardDeck(){
 		String[] deck = new String[52];
