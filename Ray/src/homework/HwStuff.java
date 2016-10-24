@@ -16,12 +16,11 @@ public class HwStuff {
 		System.out.println("Gimme a working one: ");
 		int lookingFor = Integer.parseInt(scan.nextLine());
 		System.out.println(searchSorted(a,lookingFor));
-		System.out.println(a[searchSorted(a,lookingFor)]);
 		System.out.println("Gimme a broken one: ");
 		int broken = Integer.parseInt(scan.nextLine());
 		System.out.println(searchSorted(a,broken));
 	}
-	public static int searchSorted(int[] sortedArrayToSearch, int key){
+	/*public static int searchSorted(int[] sortedArrayToSearch, int key){
 		int low = 0;
 		int high = sortedArrayToSearch.length-1;
 		int piv = (low+high)/2;
@@ -38,6 +37,29 @@ public class HwStuff {
 			}
 		}
 		return piv;
+    }*/
+	public static int searchSorted(int[] sortedArrayToSearch, int key){
+		int min = 0;
+		int max = sortedArrayToSearch.length-1;
+		int mid = (min+max)/2;
+		while(min<max){
+			if(key>sortedArrayToSearch[mid]){
+				min = mid+1;
+			}
+			else if(key<sortedArrayToSearch[mid]){
+				max = mid-1;
+			}
+			else{
+				max = mid;
+				min = mid;
+			}
+			mid = (min+max)/2;
+			if(min>max){
+				mid = -1;
+			}
+			System.out.println("min: "+min+" mid: "+mid+" max: "+max);
+		}
+		return mid;
     }
 	private static void printIntArray(int[] arr, int startidx, int endidx){
 		System.out.print("[");
