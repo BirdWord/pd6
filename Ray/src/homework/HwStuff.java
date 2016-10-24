@@ -17,7 +17,7 @@ public class HwStuff {
 		int lookingFor = Integer.parseInt(scan.nextLine());
 		System.out.println(searchSorted(a,lookingFor));
 		System.out.println(a[searchSorted(a,lookingFor)]);
-		System.out.println("Gimme a broked one: ");
+		System.out.println("Gimme a broken one: ");
 		int broken = Integer.parseInt(scan.nextLine());
 		System.out.println(searchSorted(a,broken));
 	}
