@@ -5,6 +5,7 @@ public class Permutations {
 		String[] s1 = {"cat", "dog", "mouse", "cat", "moose", "cat"};
 		String[] s2 = {"cat", "dog", "mouse", "cat"};
 		printArray(printPermutations(s2));
+		printArray(printPermutations(s1));
     }
 	/*Write a method called: public static String[] printPermutations(String[] s1)
 	 *  The method should print every permutation of two strings from s1 with NO duplicates 
