@@ -13,32 +13,7 @@ public class HwStuff {
 			a[i] = start;
 		}
 		printIntArray(a);
-		System.out.println("Gimme a working one: ");
-		int lookingFor = Integer.parseInt(scan.nextLine());
-		System.out.println(searchSorted(a,lookingFor));
-		System.out.println(a[searchSorted(a,lookingFor)]);
-		System.out.println("Gimme a broken one: ");
-		int broken = Integer.parseInt(scan.nextLine());
-		System.out.println(searchSorted(a,broken));
 	}
-	public static int searchSorted(int[] sortedArrayToSearch, int key){
-		int low = 0;
-		int high = sortedArrayToSearch.length-1;
-		int piv = (low+high)/2;
-		while(low<=high && sortedArrayToSearch[piv] != key){
-			if(sortedArrayToSearch[piv] < key){
-				low = piv+1;
-			}
-			else{
-				high = piv-1;
-			}
-			piv = (low+high)/2;
-			if(low>high){
-				piv = -1;
-			}
-		}
-		return piv;
-    }
 	private static void printIntArray(int[] arr, int startidx, int endidx){
 		System.out.print("[");
 		for(int i = startidx; i<endidx; i++){
