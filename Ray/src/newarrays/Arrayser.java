@@ -12,7 +12,7 @@ public class Arrayser {
 		System.out.println((end-start)+"ms");
 		
 	}
-	private static void passByValue(){
+	/*private static void passByValue(){
 		//p("It took "+(end-start)+" millisecond(s).");
 			//String[] string1 = {"","",""};
 			///String[] string2 = new String[3];
@@ -29,8 +29,8 @@ public class Arrayser {
 				changeString(someStrings, 100);
 				printArray(someStrings);
 				changeArrayElement(someStrings, 99);
-	}
-	private static void changeArrayElement(String[] someStrings, int i) {
+	}*/
+	/*private static void changeArrayElement(String[] someStrings, int i) {
 		someStrings[i] = "new item "+(i+1);
 		
 	}
@@ -39,7 +39,7 @@ public class Arrayser {
 	}
 	private static void changeString(String[] a, int index) {
 		 a[index]= "this has been changed";
-	}
+	}*/
 	public static void p(String s){
 		System.out.println(s);
 	}

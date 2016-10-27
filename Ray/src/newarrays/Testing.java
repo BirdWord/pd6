@@ -81,9 +81,9 @@ public class Testing {
 		arr[index1] = arr[index2];
 		arr[index2] = value;
 	}
-	private static void shuffleArray(int[] arr){
+	/*private static void shuffleArray(int[] arr){
 		int[] shuf = new int[arr.length];
 		
-	}
+	}*/
 	
 }
