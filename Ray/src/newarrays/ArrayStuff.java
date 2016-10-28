@@ -1,9 +1,11 @@
 package newarrays;
 
+import java.util.Arrays;
+
 public class ArrayStuff {
 
 	public static void main(String[] args) {
-		testPrimes(5);
+		testPrimes(121);
 	}
 	private static void shuffle(int[] arr){
 		for(int i = 0; i<arr.length; i++){
@@ -27,9 +29,9 @@ public class ArrayStuff {
 		}
 		theNumbers[0] = false;
 		theNumbers[1] = false;
-		for(int i = 2; i<=numberToTest; i++){
-			int increment = i+i;
-			for(int test = increment; test<=lastToCheck; test+=increment){
+		for(int i = 2; i<=lastToCheck; i++){
+			int increment = i*2;
+			for(int test = increment; test<numberToTest; test+=i){
 				theNumbers[test] = false;
 			}
 		}
