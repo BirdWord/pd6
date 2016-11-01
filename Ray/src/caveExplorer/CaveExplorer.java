@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CaveExplorer {
 	public static CaveRoom caves[][];
-	public static Scanner in;
+	public static Scanner in = new Scanner(System.in);
 	public static CaveRoom currentRoom;
 	public static Inventory inventory;
 	public static void main(String args[]){
@@ -16,6 +16,7 @@ public class CaveExplorer {
 		}
 		currentRoom = caves[0][1];
 		currentRoom.enter();
+		caves[0][1].setConnection(caves[0][2]);
 	}
 }
 
