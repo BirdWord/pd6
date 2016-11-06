@@ -9,7 +9,6 @@ public class TwoDArrayIntro {
 	public static int j;
 	public static Scanner in;
 	public static void main(String[] args) {
-		//printMap(5,5);
 		arr2D = new String[5][4];
 		for(int row = 0; row<arr2D.length; row++){
 			for(int col = 0; col<arr2D[row].length; col++){
@@ -22,8 +21,8 @@ public class TwoDArrayIntro {
 				pic[i][j] = " ";
 			}
 		}
-		i = 2;
-		j = 3;
+		i = 0;
+		j = 0;
 		in = new Scanner(System.in);
 		startExploring();
 	}
@@ -32,7 +31,7 @@ public class TwoDArrayIntro {
 	private static void startExploring() {
 		while(true){
 			pic[i][j] = "X";
-			printPic(pic);
+			printMap(pic.length,pic[0].length);
 			System.out.println("You are in room "+arr2D[i][j]+".");
 			System.out.println("What do you wanna do?");
 			String input = in.nextLine();
@@ -45,27 +44,66 @@ public class TwoDArrayIntro {
 	}
 
 
+	private static void printMap(int row, int column){
+		/*
+		a System.out.println(" _______");
+		b System.out.println("|   |   |");
+		c System.out.println("|   |   |");
+		d System.out.println("|___|___|");
+		step a: for a 1x2 there is 1 space in beginning then 4 underscores (column * 4)-1 underscores
+		then, for each map row, u want to print step b then c then print a row of step d
+		step b: print a line in beginning then for each column print a pattern of 3 space then line
+		step c: print a line, space, middle tile, space, then line
+		step d: print line and for each column, print 3 underscores and a line
+		*/
+		//Step A
+		System.out.print(" ");
+		for(int i = 0; i<(column*4)-1; i++){
+			System.out.print("_");
+		}
+		for(int r = 0; r<row; r++){
+			System.out.println();
+			//Step B
+			System.out.print("|");
+			for(int i = 0; i<column; i++){
+				System.out.print("   |");
+			}
+			System.out.println();
+			//Step C
+			System.out.print("|");
+			for(int i = 0; i<column; i++){
+				System.out.print(" "+pic[r][i]+" |");
+			}
+			System.out.println();
+			//Step D
+			System.out.print("|");
+			for(int i = 0; i<column; i++){
+				System.out.print("___|");
+			}
+		}
+		//just to move the text down
+		System.out.println();
+	}
+	
 	private static void interpretInput(String input) {
 		int iOrig = i;
 		int jOrig = j;
 		if(input.equals("w") && i>0){
-			pic[i][j] = " ";
 			i--;
 		}
 		else if(input.equals("a") && j>0){
-			pic[i][j] = " ";
 			j--;
 		}
 		else if(input.equals("s") && i<arr2D.length-1){
-			pic[i][j] = " ";
 			i++;
 		}
-		else if(j<arr2D[0].length-1){
-			pic[i][j] = " ";
+		else if(input.equals("d") && j<arr2D[0].length-1){
 			j++;
 		}
 		if(iOrig == i && jOrig == j)
 			System.out.println("You're at the edge. You can go no further.");
+		else
+			pic[iOrig][jOrig] = " ";
 	}
 
 
@@ -79,22 +117,6 @@ public class TwoDArrayIntro {
 		return false;
 	}
 
-
-	/*private static void printMap(int row, int length) {
-		String[][] map = new String[row][length];
-		System.out.print(" ");
-		for(int i = 0; i<row; i++){
-			System.out.print("____");
-		}
-		System.out.println();
-		for(int i = 0; i<row*3; i++){
-			System.out.print("|");
-			for(int j = 0; j<length; j++){
-				System.out.print("   |");
-			}
-			System.out.println();
-		}
-	}*/
 	private static void mines(){
 		boolean[][] mines = new boolean[6][12];
 		createMines(mines, 10);
