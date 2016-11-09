@@ -6,7 +6,7 @@ public class CaveExplorer {
 	public static CaveRoom caves[][];
 	public static Scanner in = new Scanner(System.in);
 	public static CaveRoom currentRoom;
-	public static Inventory inventory;
+	public static Inventory inventory = new Inventory();
 	public static void main(String args[]){
 		caves = new CaveRoom[5][5];
 		for(int i = 0; i<caves.length; i++){
