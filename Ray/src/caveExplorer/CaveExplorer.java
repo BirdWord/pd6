@@ -6,7 +6,7 @@ public class CaveExplorer {
 	public static CaveRoom caves[][];
 	public static Scanner in = new Scanner(System.in);
 	public static CaveRoom currentRoom;
-	public static Inventory inventory = new Inventory();
+	public static Inventory inventory;
 	public static void main(String args[]){
 		caves = new CaveRoom[5][5];
 		for(int i = 0; i<caves.length; i++){
@@ -20,6 +20,7 @@ public class CaveExplorer {
 		caves[0][2].setConnection(CaveRoom.SOUTH, caves[1][2], new Door());
 		caves[1][2].setConnection(CaveRoom.SOUTH, caves[2][2], new Door());
 		startExploring();
+		inventory = new Inventory();
 	}
 	private static void startExploring() {
 		while(true){
