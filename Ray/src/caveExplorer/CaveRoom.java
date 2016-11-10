@@ -121,12 +121,13 @@ public class CaveRoom {
 		String[] keys = {"w", "d", "s", "a"};
 		int indexFound = -1;
 		for(int i = 0; i<keys.length; i++){
-			if(input == keys[i]){
+			if(input.equals(keys[i])){
 				indexFound = i;
 				break;
 			}
 		}
-		if(borderingRooms[indexFound] != null && doors[indexFound].isOpen()){
+		System.out.println(indexFound);
+		if(indexFound != -1 && borderingRooms[indexFound] != null && doors[indexFound].isOpen()){
 			CaveExplorer.currentRoom.leave();
 			CaveExplorer.currentRoom = borderingRooms[indexFound];
 			CaveExplorer.currentRoom.enter();
