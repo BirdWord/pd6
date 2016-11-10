@@ -19,8 +19,8 @@ public class CaveExplorer {
 		caves[0][1].setConnection(CaveRoom.EAST, caves[0][2], new Door());
 		caves[0][2].setConnection(CaveRoom.SOUTH, caves[1][2], new Door());
 		caves[1][2].setConnection(CaveRoom.SOUTH, caves[2][2], new Door());
-		startExploring();
 		inventory = new Inventory();
+		startExploring();
 	}
 	private static void startExploring() {
 		while(true){

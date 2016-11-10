@@ -28,9 +28,11 @@ public class Inventory {
 			for(int i = 0; i<3;i++){
 				String text = "";
 				for(CaveRoom cr: row){
-					text += "|";
 					if(cr.getDoor(CaveRoom.WEST) != null && cr.getDoor(CaveRoom.WEST).isOpen()){
 						text += " ";
+					}
+					else{
+						text+="|";
 					}
 					if(i == 0){
 						text+="   ";
