@@ -4,7 +4,7 @@ public class Inventory {
 	private boolean hasMap;
 	private String map;
 	public Inventory(){
-		hasMap = true;
+		hasMap = false;
 		updateMap();
 	}
 	public boolean isHasMap() {

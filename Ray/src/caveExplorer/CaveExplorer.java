@@ -14,6 +14,7 @@ public class CaveExplorer {
 				caves[i][j] = new CaveRoom("This caves has coordinates ("+i+","+j+").");
 			}
 		}
+		caves[0][2] = new EventRoom("This is the room where that guy with a tail met you.", new GameStartEvent());
 		currentRoom = caves[0][1];
 		currentRoom.enter();
 		caves[0][1].setConnection(CaveRoom.EAST, caves[0][2], new Door());
@@ -30,6 +31,9 @@ public class CaveExplorer {
 			String input = in.nextLine();
 			currentRoom.interpretInput(input);
 		}
+	}
+	public static void print(String string) {
+		System.out.println(string);
 	}
 }
 
