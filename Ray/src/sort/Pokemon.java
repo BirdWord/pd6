@@ -29,10 +29,10 @@ public class Pokemon {
 		this.poisoned = b;
 	}
 	public void lapse(){
-		if(this.poisoned)
-			this.hp--;
-		if(this.hp < 15)
+		if(this.poisoned && this.hp < 15)
 			this.hp = 0;
+		else if(this.hp < 15)
+			this.hp--;
 	}
 	public void attack(Pokemon target, Attack attack){
 		 if(Math.random() < .9){
