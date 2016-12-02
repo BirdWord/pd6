@@ -1,4 +1,4 @@
-package sort;
+package pokepackage;
 
 public class Pokemon {
 	private int level;
@@ -29,10 +29,12 @@ public class Pokemon {
 		this.poisoned = b;
 	}
 	public void lapse(){
-		if(this.poisoned && this.hp < 15)
-			this.hp = 0;
-		else if(this.hp < 15)
-			this.hp--;
+		if(this.poisoned){
+			if(this.hp < 15)
+				this.hp = 0;
+			else 
+				this.hp-=15;
+		}
 	}
 	public void attack(Pokemon target, Attack attack){
 		 if(Math.random() < .9){
