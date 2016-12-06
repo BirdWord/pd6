@@ -5,13 +5,37 @@ import java.util.Arrays;
 public class AllSortsofSorts {
 	public static void main(String[] args) {
 		int[] arrayToSort={133,0,-5,31,12,12,2};
-		System.out.println("- - - SELECTION SORT - - -");
+		quickSort(arrayToSort, 0, arrayToSort.length-1);
 		System.out.println(Arrays.toString(arrayToSort));
-		selectionSort(copy(arrayToSort));
 	}
 	
-	public static void quicksort(int[] arr, int start, int end){
-		int pivot = (int)(Math.random()*(end-start))+start;
+	public static void quickSort(int[] arr, int start, int end){
+		int i = start;                          // index of left-to-right scan
+        int k = end;                            // index of right-to-left scan
+
+        if (end - start >= 1)                   // check that there are at least two elements to sort
+        {
+                int pivot = arr[start];       // set the pivot as the first element in the partition
+
+                while (k > i)                   // while the scan indices from left and right have not met,
+                {
+                        while (arr[i] <= pivot && i <= end && k > i)  // from the left, look for the first
+                                i++;                                    // element greater than the pivot
+                        while (arr[k] > pivot && k >= start && k >= i) // from the right, look for the first
+                            k--;                                        // element not greater than the pivot
+                        if (k > i)                                       // if the left seekindex is still smaller than
+                                swap(arr, i, k);                      // the right index, swap the corresponding elements
+                }
+                swap(arr, start, k);          // after the indices have crossed, swap the last element in
+                                                // the left partition with the pivot 
+                quickSort(arr, start, k - 1); // quicksort the left partition
+                quickSort(arr, k + 1, end);   // quicksort the right partition
+        }
+        else    // if there is only one element in the partition, do not do any sorting
+        {
+                return;                     // the array is sorted, so exit
+        }
+		
 	}
 	public static int[] copy(int[] arr){
 		int[] copy = new int[arr.length];
