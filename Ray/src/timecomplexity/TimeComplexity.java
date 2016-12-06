@@ -21,7 +21,7 @@ public class TimeComplexity {
 		Line 4:     }
 		Line 5:     return prime; 							1
 		Line 6: }
-													BC: 
+													BC: 4n-4 WC: 5n-6
 		
 		Line 0: public boolean isPrime(int n){
 		Line 1:     boolean prime = true; 					1
