@@ -9,7 +9,10 @@ public class AllSortsofSorts {
 		System.out.println(Arrays.toString(arrayToSort));
 		selectionSort(copy(arrayToSort));
 	}
-
+	
+	public static void quicksort(int[] arr, int start, int end){
+		int pivot = (int)(Math.random()*(end-start))+start;
+	}
 	public static int[] copy(int[] arr){
 		int[] copy = new int[arr.length];
 		for(int i = 0; i < copy.length; i++){
