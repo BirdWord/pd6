@@ -5,10 +5,46 @@ import java.util.Arrays;
 public class AllSortsofSorts {
 	public static void main(String[] args) {
 		int[] arrayToSort={133,0,-5,31,12,12,2};
-		quickSort(arrayToSort, 0, arrayToSort.length-1);
-		System.out.println(Arrays.toString(arrayToSort));
+		System.out.println(Arrays.toString(mergeSort(arrayToSort)));
 	}
 	
+	public static int[] mergeSort(int[] arr){
+		if(arr.length == 1) return arr;
+		int half = arr.length/2;
+		int[] arr1 = new int[half];
+		for(int i = 0; i<half; i++){
+			arr1[i] = arr[i];
+		}
+		int[] arr2 = new int[arr.length-half];
+		for(int i = 0; i<arr2.length; i++){
+			arr2[i] = arr[i+half];
+		}
+		return merge(mergeSort(arr1), mergeSort(arr2));
+	}
+	private static int[] merge(int[] arr1, int[] arr2) {
+		int[] ret = new int[arr1.length+arr2.length];
+		int c1 = 0; int c2 = 0;
+		for(int i = 0; i<ret.length; i++){
+			if(c1 == arr1.length){
+				ret[i] = arr2[c2];
+				c2++;
+			}
+			else if(c2 == arr2.length){
+				ret[i] = arr1[c1];
+				c1++;
+			}
+			else if(arr1[c1] > arr2[c2]){
+				ret[i] = arr2[c2];
+				c2++;
+			}
+			else{
+				ret[i] = arr1[c1];
+				c1++;
+			}
+		}
+		return ret;
+	}
+
 	public static void quickSort(int[] arr, int start, int end){
 		int i = start;                          // index of left-to-right scan
         int k = end;                            // index of right-to-left scan
