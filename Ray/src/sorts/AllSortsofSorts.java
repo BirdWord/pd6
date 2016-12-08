@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class AllSortsofSorts {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arrayToSort={133,0,-5,31,12,12,2};
 		System.out.println("- - - MERGE SORT - - -");
 		System.out.println(Arrays.toString(arrayToSort));
