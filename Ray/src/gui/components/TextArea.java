@@ -12,13 +12,35 @@ public class TextArea extends TextLabel{
 		super(x, y, w, h, text);
 	}
 	@Override
-	public void update(Graphics2D g) {
-		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		g.setColor(Color.BLACK);
+	public void update(Graphics2D g){
+		g = clear();
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
-		if(getText() != null) g.drawString(getText(), 4, getHeight()-5);
 		FontMetrics fm = g.getFontMetrics();
-		String[] words = getText().split(" ");
-		
+		g.setColor(Color.black);
+		if(getText() != null){
+			String[] words = getText().split(" ");
+			if(words.length >0){
+				int i = 0;
+				final int SPACING = 2;
+				int y = 0 + fm.getHeight()+SPACING;
+				String line = words[i] + " ";
+				i++;
+				while(i < words.length){
+					while(i < words.length && fm.stringWidth(line) + fm.stringWidth(words[i]) < getWidth()){
+						line += words[i]+" ";
+						i++;
+					}
+					if(y < getHeight()){
+						g.drawString(line, 2, y);
+						y += fm.getDescent() + fm.getHeight()+SPACING;
+						line = "";
+					}else{
+						break;
+					}
+				}
+			}
+
+		}
 	}
 }

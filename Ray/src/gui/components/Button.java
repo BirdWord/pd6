@@ -2,6 +2,7 @@ package gui.components;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
@@ -21,9 +22,27 @@ public class Button extends TextLabel implements Clickable{
 		g.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 35);
 		g.setColor(Color.PINK);
 		g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 35, 35);
-		g.setColor(Color.WHITE);
-		g.setFont(new Font(this.getFont(), Font.PLAIN, this.getSize()));
-		if(this.getText() != null) g.drawString(this.getText(), 4, getHeight()-5);
+		g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
+		FontMetrics fm = g.getFontMetrics();
+		
+		if(getText()!= null){
+			g.setColor(Color.white);
+			String t = getText();
+			//just in case text is too wide, cut off
+			int cutoff = t.length();
+			while(cutoff > 0 && fm.stringWidth(t) > getWidth()){
+				cutoff --;
+				t = t.substring(0,cutoff); 
+			}
+			g.drawString(t, (getWidth()-fm.stringWidth(t))/2, 
+					(getHeight()+fm.getHeight()-fm.getDescent())/2);
+		}
+	}
+	public Color getColor() {
+		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
 	}
 	@Override
 	public boolean isHovered(int x, int y) {
