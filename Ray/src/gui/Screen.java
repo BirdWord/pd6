@@ -3,6 +3,8 @@ package gui;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public abstract class Screen {
 		update();
 	}
 	public abstract void initObjects(ArrayList<Visible> viewObjects);
-	private void update() {
+	public void update() {
 		Graphics2D g = image.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.WHITE);
@@ -39,5 +41,11 @@ public abstract class Screen {
 	}
 	public int getHeight(){
 		return image.getHeight();
+	}
+	public MouseMotionListener getMouseMotionListener(){
+		return null;
+	}
+	public MouseListener getMouseListener(){
+		return null;
 	}
 }

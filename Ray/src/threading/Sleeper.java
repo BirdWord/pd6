@@ -5,7 +5,7 @@ public class Sleeper implements Runnable{
 	private int sleepTime;
 	public Sleeper(int num) {
 		number = num;
-		this.sleepTime = (int)(1000*Math.random());
+		this.sleepTime = (int)(10*Math.random());
 	}
 
 	public static void main(String[] args) {

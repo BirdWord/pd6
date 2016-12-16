@@ -3,6 +3,7 @@ package gui.screens;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import gui.Screen;
@@ -12,8 +13,8 @@ import gui.components.TextArea;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
-public class CoordinateScreen extends Screen implements MouseListener{
-
+public class CoordinateScreen extends Screen implements MouseMotionListener{
+	private TextLabel text;
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
 		
@@ -21,7 +22,7 @@ public class CoordinateScreen extends Screen implements MouseListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		TextLabel text = new TextLabel(20, 200, 500, 40, "Some text");
+		text = new TextLabel(20, 200, 500, 40, "Some text");
 		viewObjects.add(text);
 		Button button = new Button(100, 140, 150, 40, "Click me", new Color(0,76,153), new Action(){
 			public void act(){
@@ -33,33 +34,18 @@ public class CoordinateScreen extends Screen implements MouseListener{
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mouseDragged(MouseEvent e) {
 		
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseMoved(MouseEvent e) {
+		int mx = e.getX();
+		int my = e.getY();
+		text.setText("Mouse at ("+mx+", "+my+")");
 	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public MouseMotionListener getMouseMotionListener(){
+		return this;
 	}
 
 }
