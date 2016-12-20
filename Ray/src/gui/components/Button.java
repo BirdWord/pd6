@@ -20,7 +20,7 @@ public class Button extends TextLabel implements Clickable{
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setColor(color);
 		g.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 35);
-		g.setColor(Color.PINK);
+		g.setColor(Color.GREEN);
 		g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 35, 35);
 		g.setFont(new Font(getFont(), Font.PLAIN, getSize()));
 		FontMetrics fm = g.getFontMetrics();

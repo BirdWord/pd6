@@ -10,6 +10,7 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 	private Screen currentScreen;
 	public GUIApplication(int width, int height){
 		super();
+		//setUndecorated(true); if you want to remove the top+borders
 		setBounds(20,20,width,height);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initScreen();

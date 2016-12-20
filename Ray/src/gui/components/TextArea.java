@@ -36,7 +36,7 @@ public class TextArea extends TextLabel{
 						y += fm.getDescent() + fm.getHeight()+SPACING;
 						line = "";
 					}else{
-						break;
+						break;//supercalifragilisticexpialidocious
 					}
 				}
 			}

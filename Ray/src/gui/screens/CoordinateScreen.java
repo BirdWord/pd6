@@ -2,19 +2,24 @@ package gui.screens;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import gui.Screen;
 import gui.components.Action;
 import gui.components.Button;
+import gui.components.Graphic;
 import gui.components.TextArea;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
 public class CoordinateScreen extends Screen implements MouseMotionListener{
 	private TextLabel text;
+	private Button button;
+	private TextArea area;
+	private Graphic potato;
+	private Graphic smalltato;
+	private Graphic scaletato;
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
 		
@@ -22,15 +27,18 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		text = new TextLabel(20, 200, 500, 40, "Some text");
+		text = new TextLabel(20, 200, 500, 40, "Mouse not on screen");
 		viewObjects.add(text);
-		Button button = new Button(100, 140, 150, 40, "Click me", new Color(0,76,153), new Action(){
-			public void act(){
-				
-			}});
+		button = new Button(100, 140, 150, 40, "Click me", new Color(0,76,153), new Action(){public void act(){}});
 		viewObjects.add(button);
-		TextArea moreText = new TextArea(200, 50, 200, 80, "There is so much text here and stuff");
-		viewObjects.add(moreText);
+		area = new TextArea(200, 50, 200, 80, "There is so much text here and stuff.");
+		viewObjects.add(area);
+		potato = new Graphic(300, 100, "resources/sampleImages/potato.png");
+		viewObjects.add(potato);
+		smalltato = new Graphic(650, 225, 100, 100, "resources/sampleImages/potato.png");
+		viewObjects.add(smalltato);
+		scaletato = new Graphic(800, 400, 2, "resources/sampleImages/potato.png");
+		viewObjects.add(scaletato);
 	}
 
 	@Override
