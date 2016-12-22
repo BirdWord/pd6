@@ -6,6 +6,7 @@ import gui.screens.CoordinateScreen;
 import gui.screens.ScreenThing;
 
 public class MouseFollower extends GUIApplication {
+	private static final long serialVersionUID = 3942658605762321424L;
 	private CoordinateScreen cs;
 	public static MouseFollower game;
 	public static ScreenThing myScreen;

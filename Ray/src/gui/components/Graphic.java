@@ -38,6 +38,7 @@ public class Graphic implements Visible {
 			int newHeight = (int)(icon.getIconHeight()*scale);
 			image = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
 			Graphics2D g = image.createGraphics();
+			loadedImages = true;
 			g.drawImage(icon.getImage(), 0, 0, newWidth, newHeight, 0, 0, icon.getIconWidth(), icon.getIconHeight(), null);
 		}
 		catch(Exception e){
@@ -52,6 +53,7 @@ public class Graphic implements Visible {
 				image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
 				Graphics2D g = image.createGraphics();
 				g.drawImage(icon.getImage(), 0, 0, null);
+				loadedImages = true;
 			}
 			else{
 				image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
@@ -96,7 +98,9 @@ public class Graphic implements Visible {
 	public boolean isAnimated() {
 		return false;
 	}
-
+	public boolean isLoaded(){
+		return loadedImages;
+	}
 	@Override
 	public void update() {
 	}
