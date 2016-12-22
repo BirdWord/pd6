@@ -32,7 +32,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		text = new TextLabel(20, 200, 500, 40, "Mouse not on screen");
 		viewObjects.add(text);
 		button = new Button(100, 140, 150, 40, "Click me", new Color(0,76,153), new Action(){
-			public void act(){MouseFollower.game.setScreen(MouseFollower.myScreen);}});
+			public void act(){MouseFollower.game.setScreen(MouseFollower.screen2);}});
 		viewObjects.add(button);
 		area = new TextArea(200, 50, 200, 80, "There is so much text here and stuff.");
 		viewObjects.add(area);
