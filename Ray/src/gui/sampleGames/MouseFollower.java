@@ -27,5 +27,4 @@ public class MouseFollower extends GUIApplication {
 		Thread app = new Thread(game);
 		app.start();
 	}
-
 }
