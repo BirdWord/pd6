@@ -15,9 +15,8 @@ public class ScreenThing extends Screen{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		text = new TextLabel(20, 200, 500, 40, "HERE IS SOME TEXT");
+		text = new TextLabel(300, 200, 500, 40, "SUPERCALIFRAGILISTICEXPIALIDOCIOUS");
 		viewObjects.add(text);
-		System.out.println(viewObjects);
 	}
 
 }

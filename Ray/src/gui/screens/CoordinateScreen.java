@@ -40,7 +40,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		viewObjects.add(potato);
 		smalltato = new Graphic(650, 225, 100, 100, "resources/sampleImages/potato.png");
 		viewObjects.add(smalltato);
-		scaletato = new Graphic(800, 400, 2, "resources/sampleImages/potato.png");
+		scaletato = new Graphic(800, 400, .1, "resources/sampleImages/potato.png");
 		viewObjects.add(scaletato);
 	}
 
