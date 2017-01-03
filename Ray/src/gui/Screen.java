@@ -58,6 +58,8 @@ public abstract class Screen {
 		/*removing objects shifts indices after it
 		*you can either iterate backwards through list OR
 		*you can subtract index by 1 after removing
+		*
+		*note: remove returns object removed 
 		*/
 	}
 	public void moveToBack(Visible v){
