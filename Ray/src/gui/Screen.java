@@ -29,7 +29,8 @@ public abstract class Screen {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.BLACK);
-		for(Visible v: viewObjects){
+		for(int i = 0; i<viewObjects.size(); i++){
+			Visible v = viewObjects.get(i);
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
 	}
@@ -54,5 +55,21 @@ public abstract class Screen {
 		  
 	public void remove(Visible v){
 		viewObjects.remove(v);
+		/*removing objects shifts indices after it
+		*you can either iterate backwards through list OR
+		*you can subtract index by 1 after removing
+		*/
+	}
+	public void moveToBack(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);
+			viewObjects.add(0,v);
+		}
+	}
+	public void moveToFront(Visible v){
+		if(viewObjects.contains(v)){
+			viewObjects.remove(v);
+			viewObjects.add(v);
+		}
 	}
 }
