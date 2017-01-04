@@ -16,7 +16,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	private double timeLeft;
 	public WhackAMoleScreen(int width, int height) {
 		super(width, height);
-		timeLeft = 30;
+		timeLeft = 30.0;
 		Thread play = new Thread(this);
 		play.run();
 	}
