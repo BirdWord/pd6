@@ -18,7 +18,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 		super(width, height);
 		timeLeft = 30.0;
 		Thread play = new Thread(this);
-		play.run();
+		play.start();
 	}
 
 	private PlayerInterface getAPlayer(){
@@ -47,7 +47,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 		while(timeLeft > 0){
 			updateTimer();
 			updateAllMoles();
-			appearNewMole();
+			//appearNewMole();
 		}
 	}
 

@@ -6,7 +6,6 @@ public class WhackAMoleGame extends GUIApplication{
 
 	public WhackAMoleGame(int width, int height) {
 		super(width, height);
-		initScreen();
 	}
 
 	@Override
@@ -16,8 +15,8 @@ public class WhackAMoleGame extends GUIApplication{
 	}
 	public static void main(String[] args){
 		WhackAMoleGame wamg = new WhackAMoleGame(800,500);
-		Thread app = new Thread(wamg);
-		app.start();
+		Thread game = new Thread(wamg);
+		game.start();
 	}
 	
 }
