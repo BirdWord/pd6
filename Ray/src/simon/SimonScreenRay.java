@@ -60,8 +60,8 @@ public class SimonScreenRay extends ClickableScreen implements Runnable {
 
 	private void generateButtons() {
 		Color[] colors = new Color[BUTTONS];
-		for(int){
-			
+		for(int i = 0; i<colors.length; i++){
+			colors[i] = new Color(randomRGB(),randomRGB(),randomRGB());
 		}
 	}
 
