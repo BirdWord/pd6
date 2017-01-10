@@ -56,7 +56,6 @@ public class SimonScreenRay extends ClickableScreen implements Runnable {
 				try {
 					Thread.sleep(sleepTime);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				button.dim();
@@ -70,7 +69,6 @@ public class SimonScreenRay extends ClickableScreen implements Runnable {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
