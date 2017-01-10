@@ -6,12 +6,13 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
-public class TextArea extends TextLabel{
+public class TextArea extends TextLabel {
 
 	public TextArea(int x, int y, int w, int h, String text) {
 		super(x, y, w, h, text);
+
 	}
-	@Override
+
 	public void update(Graphics2D g){
 		g = clear();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -36,11 +37,12 @@ public class TextArea extends TextLabel{
 						y += fm.getDescent() + fm.getHeight()+SPACING;
 						line = "";
 					}else{
-						break;//supercalifragilisticexpialidocious
+						break;
 					}
 				}
 			}
 
 		}
 	}
+
 }
