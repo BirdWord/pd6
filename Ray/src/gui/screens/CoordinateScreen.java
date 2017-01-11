@@ -10,6 +10,7 @@ import gui.Screen;
 import gui.components.Action;
 import gui.components.Button;
 import gui.components.Graphic;
+import gui.components.MovingComponent;
 import gui.components.TextArea;
 import gui.components.TextLabel;
 import gui.components.Visible;
@@ -22,6 +23,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	private Graphic potato;
 	private Graphic smalltato;
 	private Graphic scaletato;
+	public MovingComponent c;
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
 		
@@ -42,6 +44,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		viewObjects.add(smalltato);
 		scaletato = new Graphic(800, 400, .1, "resources/sampleImages/potato.png");
 		viewObjects.add(scaletato);
+		c = new MovingComponent(20,20,100,100);
+		c.setVy(2);
+		c.setVx(1);
+		viewObjects.add(c);
+		c.play();
 	}
 
 	@Override

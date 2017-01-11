@@ -58,6 +58,7 @@ public class MovingComponent extends Component implements Runnable {
 		while(running){
 			try {
 				Thread.sleep(REFRESH_RATE);
+				checkBehaviors();
 				update();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -94,6 +95,26 @@ public class MovingComponent extends Component implements Runnable {
 			Thread go = new Thread(this);
 			go.start();
 		}
+	}
+	public void checkBehaviors(){
+		if(posy+vy > 300){
+			posy = 300;
+			vy=-vy;
+		}
+		else if(posy+vy < 20){
+			posy = 20;
+			vy=-vy;
+		}
+		
+		if(posx+vx > 300){
+			posx = 300;
+			vx=-vx;
+		}
+		else if(posx+vx < 20){
+			posx = 20;
+			vx=-vx;
+		}
+		
 	}
 
 }
