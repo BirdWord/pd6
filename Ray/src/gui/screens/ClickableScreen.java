@@ -10,66 +10,72 @@ import gui.components.Clickable;
 import gui.components.Visible;
 
 public abstract class ClickableScreen extends Screen implements MouseListener {
+
 	private ArrayList<Clickable> clickables;
+	
 	public ClickableScreen(int width, int height) {
 		super(width, height);
-		clickables = new ArrayList<Clickable>();
+		// TODO Auto-generated constructor stub
 	}
 
-	public abstract void initAllObjects(List<Visible> list);
+	public abstract void initAllObjects(List<Visible> viewObjects);
+	
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void initObjects(ArrayList<Visible> viewObjects) {
+		initAllObjects(viewObjects);
+		clickables = new ArrayList<Clickable>();
+		for(Visible v: viewObjects){
+			if(v instanceof Clickable){
+				clickables.add((Clickable)v);
+			}
+		}
+	}
+
+	public void mouseClicked(MouseEvent m) {
 		for(Clickable c: clickables){
-			if(c.isHovered(arg0.getX(), arg0.getY())){
+			if(c.isHovered(m.getX(), m.getY())){
 				c.act();
 				break;
 			}
 		}
 	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) {
-		initAllObjects(viewObjects);
-		for(Visible v: viewObjects){
-			if(v instanceof Clickable)
-				clickables.add((Clickable)v);
-		}
-	}
+	
 	public void addObject(Visible v){
 		super.addObject(v);
-		if(v instanceof Clickable)
-			 clickables.add((Clickable) v);
+		if(v instanceof Clickable){
+			clickables.add((Clickable)v);
+		}
 	}
-		 
+	
+
+	
 	public void remove(Visible v){
 		super.remove(v);
 		clickables.remove(v);
 	}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public MouseListener getMouseListener(){
 		return this;
 	}
+	
 }
