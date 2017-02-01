@@ -7,6 +7,10 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
 
 public abstract class GUIApplication extends JFrame implements Runnable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Screen currentScreen;
 	public GUIApplication(int width, int height){
 		super();

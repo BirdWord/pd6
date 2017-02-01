@@ -1,12 +1,10 @@
 package gui.components;
 
 
-public class ClickableGraphic extends Graphic implements Clickable{
-	private Action action;
-	public ClickableGraphic(int x, int y, String imageLocation) {
-		super(x, y, imageLocation);
-	}
+public class ClickableGraphic extends Graphic implements Clickable {
 
+	private Action action;
+	
 	public ClickableGraphic(int x, int y, int w, int h, String imageLocation) {
 		super(x, y, w, h, imageLocation);
 	}
@@ -15,16 +13,20 @@ public class ClickableGraphic extends Graphic implements Clickable{
 		super(x, y, scale, imageLocation);
 	}
 
-	public void setAction(Action action){
-		this.action = action;
+	
+	public void setAction(Action a){
+		this.action = a;
 	}
-	@Override
+	public ClickableGraphic(int x, int y, String imageLocation) {
+		super(x, y, imageLocation);
+	}
+
 	public boolean isHovered(int x, int y) {
-		return x >= getX() && x <= getX()+getWidth() && y >= getY() && y <= getY()+getHeight();
+		return x > getX() && x < getX() + getWidth() && y > getY() && y < getY() + getHeight();
 	}
-	@Override
+
 	public void act() {
-		if(action != null)
-			action.act();
+		if(action != null)action.act();
 	}
+
 }

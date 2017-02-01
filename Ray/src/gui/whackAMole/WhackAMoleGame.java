@@ -4,6 +4,10 @@ import gui.GUIApplication;
 
 public class WhackAMoleGame extends GUIApplication{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public WhackAMoleGame(int width, int height) {
 		super(width, height);
 	}
