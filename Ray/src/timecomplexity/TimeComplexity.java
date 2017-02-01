@@ -3,7 +3,7 @@ package timecomplexity;
 public class TimeComplexity {
 
 	public static void main(String[] args) {
-
+		move();;
 	}
 	/*	Line 0: public double getAverage(double[] values){
 		Line 1:     double sum=0.0;							1
@@ -42,6 +42,11 @@ public class TimeComplexity {
 		Line 7: }
 											BC: 4sqrt(n)-2 WC: 5sqrt(n)-4
 	*/
+
+	private static void move() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
